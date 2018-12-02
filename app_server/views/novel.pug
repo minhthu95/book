@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    jumbotron.text-center
+        .container
+            h1.jumbotron-heading Novels & Stories
+            p.lead.text-muted Here is list of novels in this page that available for free download and reading online.
+    album.py-5.bg-light
+        .container
+            .row
+                each novel in novels
+                    .col-md-4
+                        .card.mb-4.box-shadow
+                            img.card-img-top(src=novel.image, alt="Thumbnail", style="height:400px; width:260px; display:block;", data-holder-render="true", vertical-align="middle", border-style="none")
+                            .card-body
+                                p.card-text= novel.name + ' by ' + novel.author
+                                .d-flex.justify-content-between.align-items-center
+                                    .btn-group
+                                        button.btn.btn-sm.btn-outline-secondary='View'
+                                        button.btn.btn-sm.btn-outline-secondary='Download'
+                                    small.text-muted 9 mins

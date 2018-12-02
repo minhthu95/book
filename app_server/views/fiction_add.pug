@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        .row
+            h4 New fiction name and author
+        form(action="", method="post")
+            .form-group.row
+                label Name
+                    input.form-control(name="name")
+            .form-group.row
+                label Author
+                    input.form-control(name="author")
+            .form-group.row
+                label Image
+                    input.form-control(name="image")
+            .form-group.row
+                button.btn-primary Add

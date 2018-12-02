@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    jumbotron.text-center
+     .container
+      h1.jumbotron-heading Fiction
+      p.lead.text-muted Here is list of fictions in this page that available for free download and reading online.
+    album.py-5.bg-light
+    .container
+      .row
+         each fiction in fictions
+          .col-md-4
+            .card.mb-4.box-shadow
+              img.card-img-top(src=fiction.image, alt="Thumbnail", style="height:400px; width:260px; display:block;", data-holder-render="true", vertical-align="middle", border-style="none")
+              .card-body
+                p.card-text= fiction.name + ' by ' + fiction.author
+                .d-flex.justify-content-between.align-items-center
+                    .btn-group
+                        button.btn.btn-sm.btn-outline-secondary='View'
+                        button.btn.btn-sm.btn-outline-secondary='Download'
+                    small.text-muted 9 mins
+      a(href='/fiction/add') Add new fiction book
